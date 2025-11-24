@@ -1,0 +1,176 @@
+/* ==============================
+ 🌿 FARMONE LOGIN/SIGNUP STYLING
+============================== */
+
+.login-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ✅ Single fullscreen image - no repeat */
+.login-bg {
+  position: absolute;
+  inset: 0;
+  background: url("https://images.unsplash.com/photo-1627920769842-6887c6df05ca?auto=format&fit=crop&w=1920&q=80")
+    center center / cover no-repeat;
+  z-index: 0;
+  filter: brightness(65%);
+}
+
+/* ✅ Green overlay for farming tone */
+.login-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(14, 90, 40, 0.55),
+    rgba(0, 0, 0, 0.25)
+  );
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+/* ✅ Glass Auth Box */
+.auth-box {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 40px 30px 46px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(10, 40, 20, 0.2);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.8s ease;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.auth-box h2 {
+  font-weight: 800;
+  font-size: 30px;
+  background: linear-gradient(90deg, #1ab65c, #0f5d2f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+}
+.auth-sub {
+  color: #5b6c58;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Mode Toggle */
+.mode-switch {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.mode-switch button {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  background: #e8f7ea;
+  font-weight: 600;
+  color: #0e5a2e;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.mode-switch button.active {
+  background: linear-gradient(90deg, #0e5a2e, #1ab65c);
+  color: white;
+  box-shadow: 0 6px 20px rgba(26, 182, 92, 0.35);
+}
+.mode-switch button:hover {
+  transform: scale(1.05);
+}
+
+/* Input Fields */
+.auth-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.auth-box input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  font-size: 15px;
+  transition: 0.2s;
+  background: rgba(255, 255, 255, 0.95);
+}
+.auth-box input:focus {
+  border-color: #1ab65c;
+  box-shadow: 0 6px 18px rgba(26, 182, 92, 0.25);
+}
+
+/* Submit Button */
+.btn-auth {
+  background: linear-gradient(90deg, #0e5a2e, #1ab65c);
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+.btn-auth:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(26, 182, 92, 0.4);
+}
+
+/* Switch link */
+.switch {
+  margin-top: 16px;
+  color: #5d6f5a;
+  font-size: 14px;
+}
+.link-btn {
+  background: none;
+  border: none;
+  color: #1ab65c;
+  font-weight: 700;
+  cursor: pointer;
+}
+.link-btn:hover {
+  color: #0e5a2e;
+}
+
+/* Error */
+.error {
+  color: #e74c3c;
+  font-size: 13px;
+  text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+  .auth-box h2 {
+    font-size: 26px;
+  }
+}

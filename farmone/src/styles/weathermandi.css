@@ -1,0 +1,396 @@
+/* =========================================
+   🌦️ WEATHER + MANDI (PRO VERSION)
+   ========================================= */
+.wm-pro-page {
+  padding-top: 100px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f6fff6 0%, #e6f8e6 100%);
+  text-align: center;
+  color: var(--text);
+}
+
+/* HEADINGS */
+.wm-pro-title {
+  font-size: 40px;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--green-dark), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.wm-pro-sub {
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* SEARCH BOX */
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(10, 50, 20, 0.1);
+  width: 320px;
+}
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-weight: 600;
+  color: var(--green-dark);
+  width: 100%;
+}
+
+/* WEATHER PANEL */
+.weather-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.weather-card {
+  width: 320px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 10px 30px rgba(10, 50, 20, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  transition: 0.3s;
+}
+.weather-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 40px rgba(26, 182, 92, 0.25);
+}
+.w-icon {
+  font-size: 70px;
+  color: var(--green);
+}
+.temp {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+.cond {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.w-info {
+  display: flex;
+  justify-content: space-around;
+  font-size: 15px;
+  color: var(--green-dark);
+}
+
+/* FORECAST CARDS */
+.forecast-cards {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.forecast-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 12px 18px;
+  box-shadow: 0 6px 18px rgba(10, 50, 20, 0.08);
+  transition: 0.3s;
+}
+.forecast-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(26, 182, 92, 0.2);
+}
+.forecast-card p {
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 6px;
+}
+
+/* MANDI SECTION */
+.mandi-pro-section {
+  margin-top: 50px;
+  width: 92%;
+  margin-inline: auto;
+}
+.mandi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.crop-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(10, 40, 20, 0.08);
+}
+.crop-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-weight: 600;
+  color: var(--green-dark);
+}
+
+/* TABLE */
+.mandi-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(10, 40, 20, 0.08);
+  overflow: hidden;
+}
+.mandi-table th,
+.mandi-table td {
+  padding: 14px;
+  text-align: center;
+}
+.mandi-table thead {
+  background: linear-gradient(90deg, var(--green-dark), var(--green));
+  color: white;
+  font-weight: 700;
+}
+.crop-icon {
+  color: var(--green-dark);
+  margin-right: 6px;
+}
+.pos {
+  color: #2ecc71;
+  font-weight: 600;
+}
+.neg {
+  color: #e74c3c;
+  font-weight: 600;
+}
+.no-data {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* FOOTNOTE */
+.last-update {
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .mandi-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .wm-pro-title {
+    font-size: 30px;
+  }
+  .weather-card {
+    width: 90%;
+  }
+}
+/* ======================================
+   🌦️ LIVE WEATHER + MANDI UI
+   ====================================== */
+.wm-live-page {
+  padding-top: 100px;
+  background: linear-gradient(180deg, #f6fff6 0%, #e5f8e5 100%);
+  min-height: 100vh;
+  text-align: center;
+  color: var(--text);
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wm-live-title {
+  font-size: 40px;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--green-dark), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.wm-live-sub {
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* SEARCH */
+.search-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(10, 50, 20, 0.08);
+  width: 360px;
+}
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  color: var(--green-dark);
+}
+.search-box button {
+  border: none;
+  background: linear-gradient(90deg, var(--green-dark), var(--green));
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.search-box button:hover {
+  transform: translateY(-2px);
+}
+
+/* WEATHER */
+.weather-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.weather-card {
+  width: 320px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(10, 50, 20, 0.1);
+  backdrop-filter: blur(10px);
+}
+.w-icon {
+  font-size: 70px;
+  color: var(--green);
+}
+.temp {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+.cond {
+  color: var(--muted);
+}
+.w-info {
+  display: flex;
+  justify-content: space-around;
+  font-size: 15px;
+  color: var(--green-dark);
+  margin-top: 10px;
+}
+
+/* FORECAST */
+.forecast-cards {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.forecast-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 12px 18px;
+  box-shadow: 0 6px 18px rgba(10, 50, 20, 0.08);
+  transition: 0.3s;
+}
+.forecast-card:hover {
+  transform: translateY(-4px);
+}
+
+/* MANDI */
+.mandi-section {
+  width: 90%;
+  margin: 0 auto;
+}
+.mandi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.crop-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 14px;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(10, 40, 20, 0.08);
+}
+.crop-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-weight: 600;
+  color: var(--green-dark);
+}
+.mandi-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(10, 40, 20, 0.08);
+}
+.mandi-table th,
+.mandi-table td {
+  padding: 14px;
+  text-align: center;
+}
+.mandi-table thead {
+  background: linear-gradient(90deg, var(--green-dark), var(--green));
+  color: white;
+}
+.crop-icon {
+  color: var(--green-dark);
+  margin-right: 6px;
+}
+.pos {
+  color: #2ecc71;
+}
+.neg {
+  color: #e74c3c;
+}
+
+/* FOOTER */
+.last-update {
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .search-box {
+    width: 90%;
+  }
+  .mandi-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

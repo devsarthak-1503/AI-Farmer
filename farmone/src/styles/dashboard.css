@@ -1,0 +1,184 @@
+/* ===============================
+   🌾 FARMER DASHBOARD ULTRA V3 (NO OVERFLOW FIXED)
+   =============================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden !important; /* global horizontal scroll fix */
+}
+
+/* ===== MAIN PAGE ===== */
+.dashboard-page {
+  padding-top: 100px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f7fff7 0%, #eaf9ea 100%);
+  color: var(--text);
+  text-align: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* ===== HEADING ===== */
+.dash-title {
+  font-size: 40px;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--forest-dark), var(--leaf-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+.dash-sub {
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 40px;
+  padding: 0 10px;
+}
+
+/* ===== FEATURE CARDS ===== */
+.dash-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto 60px auto;
+  box-sizing: border-box;
+}
+.dash-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  border: 1px solid rgba(10, 40, 20, 0.05);
+  box-shadow: 0 8px 30px rgba(10, 50, 20, 0.08);
+  padding: 24px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+.dash-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(26, 182, 92, 0.15);
+}
+.dash-card .icon {
+  font-size: 48px;
+  color: var(--leaf-green);
+  margin-bottom: 14px;
+}
+.dash-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.dash-card p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ===== INSIGHT SECTION ===== */
+.dash-insight {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(250, 252, 250, 0.9)
+  );
+  padding: 50px 10%;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  overflow-x: hidden;
+}
+.dash-insight h2 {
+  color: var(--forest-dark);
+  margin-bottom: 8px;
+}
+.insight-box {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.placeholder {
+  width: 90%;
+  max-width: 700px;
+  height: 180px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== UPDATES SECTION ===== */
+.dash-updates {
+  padding: 50px 10%;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.dash-updates h2 {
+  color: var(--forest-dark);
+  margin-bottom: 12px;
+}
+.dash-updates ul {
+  list-style: none;
+  line-height: 1.8;
+  font-size: 15px;
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+.dash-updates li {
+  margin-bottom: 6px;
+  padding-left: 8px;
+  border-left: 3px solid var(--leaf-green);
+  background: rgba(26, 182, 92, 0.05);
+}
+
+/* ===== FARMING TIPS ===== */
+.dash-tips {
+  padding: 60px 10%;
+  text-align: left;
+  box-sizing: border-box;
+}
+.dash-tips h2 {
+  color: var(--forest-dark);
+  margin-bottom: 12px;
+}
+.dash-tips ul {
+  list-style: none;
+  line-height: 1.8;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  margin: 0;
+  overflow-x: hidden;
+}
+.dash-tips li {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .dash-title {
+    font-size: 30px;
+  }
+  .dash-card {
+    padding: 20px;
+  }
+  .dash-tips ul {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,369 @@
+/* =========================================================
+   🌾 FARMONE ULTRA FARMER-THEME NAVBAR (FINAL PREMIUM)
+   ========================================================= */
+
+/* 🌈 Color Palette Inspired by Nature */
+:root {
+  --leaf-green: #1ab65c;
+  --forest-dark: #0f5d2f;
+  --soil-brown: #3bd74d;
+  --sky-blue: #157149fb;
+  --sun-yellow: #1a9134;
+  --cloud-white: #f8fff9;
+  --text-dark: #0e2226;
+  --muted: #6d8075;
+}
+
+/* =============== NAVBAR BASE =============== */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(
+    90deg,
+    var(--leaf-green),
+    var(--forest-dark),
+    var(--soil-brown),
+    var(--sky-blue),
+    var(--sun-yellow)
+  );
+  background-size: 400% 400%;
+  animation: navGradientShift 10s ease infinite;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.4s ease;
+}
+@keyframes navGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.site-nav.scrolled {
+  box-shadow: 0 8px 26px rgba(10, 40, 20, 0.2);
+  opacity: 0.97;
+}
+
+/* =============== INNER WRAPPER =============== */
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+}
+
+/* =============== LOGO =============== */
+.brand {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 900;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.brand:hover {
+  transform: scale(1.05);
+}
+.brand-mark {
+  font-size: 24px;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
+/* =============== NAV LINKS =============== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+.nav-link:hover {
+  opacity: 1;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 70%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--sun-yellow),
+    var(--sky-blue),
+    var(--leaf-green)
+  );
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+.nav-link.active::after,
+.nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+.nav-link.active {
+  opacity: 1;
+}
+
+/* =============== CTA (Post Listing) =============== */
+.pill.cta {
+  text-decoration: none;
+  color: var(--text-dark);
+  background: linear-gradient(
+    90deg,
+    var(--sun-yellow),
+    var(--leaf-green),
+    var(--sky-blue)
+  );
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(26, 182, 92, 0.3);
+  transition: all 0.3s ease;
+}
+.pill.cta:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(26, 182, 92, 0.5);
+}
+
+/* =============== LANGUAGE SELECT =============== */
+.lang-select {
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--forest-dark);
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+}
+.lang-select:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(26, 182, 92, 0.25);
+}
+
+/* =============== RIGHT SIDE =============== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* =============== HAMBURGER =============== */
+.hamb {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.hamb span {
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.hamb.is-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.hamb.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamb.is-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* =============== MOBILE DRAWER =============== */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 30, 10, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 1999;
+}
+.drawer-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.drawer {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 82%;
+  max-width: 380px;
+  background: linear-gradient(
+    180deg,
+    rgba(240, 255, 245, 0.92),
+    rgba(235, 255, 240, 0.9)
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: -10px 0 40px rgba(16, 40, 27, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.2, 1);
+  z-index: 2001;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.drawer.open {
+  transform: translateX(0);
+}
+
+/* Drawer Header */
+.drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.drawer-brand {
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--forest-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.close {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--leaf-green);
+}
+
+/* Drawer Links */
+.drawer-links {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.drawer-link {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 18px rgba(10, 50, 20, 0.06);
+  transition: 0.25s;
+}
+.drawer-link:hover {
+  transform: translateX(8px);
+  background: linear-gradient(90deg, #f0fff4, #dfffe8);
+}
+.drawer-cta {
+  background: linear-gradient(
+    90deg,
+    var(--leaf-green),
+    var(--sky-blue),
+    var(--sun-yellow)
+  );
+  color: var(--forest-dark);
+  font-weight: 800;
+  text-align: center;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 10px;
+  box-shadow: 0 10px 28px rgba(26, 182, 92, 0.35);
+}
+.drawer-footer {
+  padding: 12px 18px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* =============== RESPONSIVE RULES =============== */
+@media (max-width: 1024px) {
+  .nav-links,
+  .nav-right {
+    display: none;
+  }
+  .hamb {
+    display: flex;
+  }
+}
+
+/* ================= DESKTOP-ONLY NAVBAR TWEAKS ================= */
+@media (min-width: 1025px) {
+  .nav-inner {
+    max-width: 1320px;
+    height: 80px;
+    padding: 0 28px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 36px;
+  }
+
+  .brand {
+    margin: 0;
+  }
+
+  .nav-links {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+
+  .nav-link {
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 15px;
+  }
+
+  .nav-right {
+    justify-self: end;
+    gap: 16px;
+  }
+
+  .nav-links,
+  .nav-right {
+    display: flex;
+  }
+}

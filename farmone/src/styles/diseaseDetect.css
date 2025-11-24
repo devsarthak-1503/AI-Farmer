@@ -1,0 +1,185 @@
+/* ===============================================
+   🌿 FARMONE - Disease Detection Coming Soon Page
+   =============================================== */
+
+.disease-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f6fff6 0%, #e3f9e4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  text-align: center;
+  color: var(--text-dark);
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background soft movement */
+.disease-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(64, 214, 133, 0.2),
+      transparent 60%
+    ),
+    radial-gradient(circle at 80% 70%, rgba(29, 136, 84, 0.25), transparent 60%);
+  animation: bgFloat 8s ease-in-out infinite alternate;
+}
+@keyframes bgFloat {
+  0% {
+    background-position: 20% 30%, 80% 70%;
+  }
+  100% {
+    background-position: 30% 40%, 70% 60%;
+  }
+}
+
+.disease-container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 50px 30px;
+  max-width: 750px;
+  width: 100%;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+}
+
+/* ===== ICON ANIMATION ===== */
+.icon-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #2fc964, #1d8a4c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 10px 30px rgba(26, 182, 92, 0.25);
+  animation: pulse 3s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 25px rgba(26, 182, 92, 0.25);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(26, 182, 92, 0.35);
+  }
+}
+.plant-icon {
+  font-size: 60px;
+  color: #ffffff;
+}
+.bot-icon {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-size: 30px;
+  color: #eaffea;
+}
+
+/* ===== TEXT ===== */
+.title {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--forest-dark);
+  background: linear-gradient(90deg, #0f5d2f, #1ab65c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+.subtitle {
+  font-size: 22px;
+  color: var(--leaf-green);
+  margin-bottom: 18px;
+}
+.desc {
+  font-size: 16px;
+  color: #445744;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* ===== BUTTONS ===== */
+.btn-area {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.notify-btn {
+  background: linear-gradient(90deg, var(--leaf-green), var(--sky-blue));
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(26, 182, 92, 0.35);
+  transition: all 0.3s ease;
+}
+.notify-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(26, 182, 92, 0.45);
+}
+
+.home-btn {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--forest-dark);
+  border: 2px solid var(--leaf-green);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.home-btn:hover {
+  background: var(--leaf-green);
+  color: #fff;
+}
+
+/* ===== FOOTER BANNER ===== */
+.coming-banner {
+  margin-top: 50px;
+  background: linear-gradient(90deg, #1ab65c, #0f5d2f, #1a9134);
+  background-size: 200% 200%;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  box-shadow: 0 8px 22px rgba(26, 182, 92, 0.3);
+  animation: slideBg 6s linear infinite;
+}
+@keyframes slideBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .title {
+    font-size: 32px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+  .desc {
+    font-size: 15px;
+  }
+  .icon-circle {
+    width: 100px;
+    height: 100px;
+  }
+}
