@@ -1,0 +1,7 @@
+[build]
+  base = "farmone"
+  publish = "dist"
+  command = "npm run build"
+
+[build.environment]
+  NPM_FLAGS = "--include=dev"
